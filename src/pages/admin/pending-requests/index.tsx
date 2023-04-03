@@ -1,9 +1,17 @@
-import React from 'react'
+import type { ReactElement } from 'react';
+import Layout from '../../../layouts/dashboardLayout';
 
-function pendingRequests() {
-  return (
-    <div>pendingRequests</div>
-  )
+import type { NextPageWithLayout } from '../../../pages/_app';
+
+const ShopRequests: NextPageWithLayout = () => {
+  return <p>Pending-requests</p>
 }
 
-export default pendingRequests
+ShopRequests.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+export default ShopRequests;

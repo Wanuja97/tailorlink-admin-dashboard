@@ -1,9 +1,17 @@
-import React from 'react'
+import type { ReactElement } from 'react';
+import Layout from '../../../layouts/dashboardLayout';
 
-function profile() {
-  return (
-    <div>profile</div>
-  )
+import type { NextPageWithLayout } from '../../../pages/_app';
+
+const AdminProfile: NextPageWithLayout = () => {
+  return <p>Admin Profile</p>
 }
 
-export default profile
+AdminProfile.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+export default AdminProfile;

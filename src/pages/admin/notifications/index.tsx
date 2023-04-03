@@ -1,9 +1,17 @@
-import React from 'react'
+import type { ReactElement } from 'react';
+import Layout from '../../../layouts/dashboardLayout';
 
-function notifications() {
-  return (
-    <div>notifications</div>
-  )
+import type { NextPageWithLayout } from '../../../pages/_app';
+
+const Notifications: NextPageWithLayout = () => {
+  return <p>Notifications</p>
 }
 
-export default notifications
+Notifications.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <Layout>
+      {page}
+    </Layout>
+  )
+}
+export default Notifications;
