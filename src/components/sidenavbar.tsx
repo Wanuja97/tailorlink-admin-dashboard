@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useRouter } from 'next/router';
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -18,6 +18,7 @@ function classNameNames(...classNamees: any[]) {
 }
 
 function Navbar() {
+  const router = useRouter();
   return (
     <div className="flex fixed top-0 left- h-screen w-64 flex-col justify-between border-e bg-cyan-950">
       <div className="px-4 py-6">
@@ -30,8 +31,9 @@ function Navbar() {
 
         <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 border-t">
 
-          <Link href="/admin/dashboard" className="flex items-center gap-2 rounded-lg  px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
-          <svg
+          <Link href="/admin/dashboard" 
+          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/dashboard' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+            <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
               fill="none"
@@ -52,10 +54,11 @@ function Navbar() {
             </svg>
 
             <span className="text-sm font-medium"> Dashboard </span>
-            </Link>
-          
-          
-            <Link href="/admin/users" prefetch={false} className="flex items-center gap-2 rounded-lg  px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
+          </Link>
+
+
+          <Link href="/admin/users" prefetch={false} 
+          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/users' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -72,9 +75,10 @@ function Navbar() {
             </svg>
 
             <span className="text-sm font-medium">Manage users</span>
-            </Link>
+          </Link>
 
-            <Link href="/admin/pending-requests" prefetch={false} className="flex items-center gap-2 rounded-lg  px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
+          <Link href="/admin/pending-requests" prefetch={false}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/pending-requests' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -91,48 +95,51 @@ function Navbar() {
             </svg>
 
             <span className="text-sm font-medium"> Pending seller requests </span>
-            </Link>
+          </Link>
 
-          <Link href="/admin/notifications" prefetch={false} className="flex items-center gap-2 rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
-          <span className="sr-only">Add new admin</span>
-          <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 opacity-75"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-                  />
-                </svg>
+          <Link href="/admin/add-new-admin" prefetch={false} 
+          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/add-new-admin' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+            <span className="sr-only">Add new admin</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 opacity-75"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
+              />
+            </svg>
 
             <span className="text-sm font-medium"> Add new admin </span>
           </Link>
-          <Link href="/admin/view-admins" prefetch={false} className="flex items-center gap-2 rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
-          <span className="sr-only">View admins</span>
-          <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5 opacity-75"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+          <Link href="/admin/view-admins" prefetch={false} 
+          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/view-admins' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+            <span className="sr-only">View admins</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5 opacity-75"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
 
             <span className="text-sm font-medium">View admins</span>
           </Link>
-          <Link href="/admin/notifications" prefetch={false} className="flex items-center gap-2 rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700">
-          <span className="sr-only">Notifications</span>
+          <Link href="/admin/notifications" prefetch={false} 
+          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/notifications' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+            <span className="sr-only">Notifications</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -177,8 +184,8 @@ function Navbar() {
       </div>
 
       <div className="sticky inset-x-0 bottom-0 border-t border-gray-100">
-      <Link href="/admin/profile" className="flex items-center gap-2 bg-cyan-950 p-4">
-      <img
+        <Link href="/admin/profile" className="flex items-center gap-2 bg-cyan-950 p-4">
+          <img
             alt="Man"
             src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
             className="h-10 w-10 rounded-full object-cover"
@@ -192,7 +199,7 @@ function Navbar() {
             </p>
             <p className="text-white text-xs">Super Admin</p>
           </div>
-      </Link>
+        </Link>
       </div>
     </div>
 
