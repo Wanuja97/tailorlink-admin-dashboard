@@ -1,21 +1,21 @@
 import React from 'react'
 import { useRouter } from 'next/router';
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+// import { Fragment } from 'react'
+// import { Disclosure, Menu, Transition } from '@headlessui/react'
+// import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
 import Link from 'next/link'
 
 import Image from 'next/image'
-const navigation = [
-  { name: 'Dashboard', href: 'dashboard', current: true },
-  { name: 'Users', href: 'users', current: false },
-  { name: 'Pending Requests', href: 'pending-requests', current: false },
-]
+// const navigation = [
+//   { name: 'Dashboard', href: 'dashboard', current: true },
+//   { name: 'Users', href: 'users', current: false },
+//   { name: 'Pending Requests', href: 'pending-requests', current: false },
+// ]
 
-function classNameNames(...classNamees: any[]) {
-  return classNamees.filter(Boolean).join(' ')
-}
+// function classNameNames(...classNamees: any[]) {
+//   return classNamees.filter(Boolean).join(' ')
+// }
 
 function Navbar() {
   const router = useRouter();
@@ -29,10 +29,10 @@ function Navbar() {
           alt="TailorLink Logo"
         />
 
-        <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 border-t">
+        <nav aria-label="Main Nav" className="mt-6 flex flex-col space-y-1 border-t pt-2">
 
-          <Link href="/admin/dashboard" 
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/dashboard' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+          <Link href="/admin/dashboard"
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/dashboard' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -57,8 +57,8 @@ function Navbar() {
           </Link>
 
 
-          <Link href="/admin/users" prefetch={false} 
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/users' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+          <Link href="/admin/users" prefetch={false}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/users' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -78,7 +78,7 @@ function Navbar() {
           </Link>
 
           <Link href="/admin/pending-requests" prefetch={false}
-            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/pending-requests' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/pending-requests' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 opacity-75"
@@ -97,8 +97,8 @@ function Navbar() {
             <span className="text-sm font-medium"> Pending seller requests </span>
           </Link>
 
-          <Link href="/admin/add-new-admin" prefetch={false} 
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/add-new-admin' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+          <Link href="/admin/add-new-admin" prefetch={false}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/add-new-admin' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <span className="sr-only">Add new admin</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -117,8 +117,8 @@ function Navbar() {
 
             <span className="text-sm font-medium"> Add new admin </span>
           </Link>
-          <Link href="/admin/view-admins" prefetch={false} 
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/view-admins' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+          <Link href="/admin/view-admins" prefetch={false}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/view-admins' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <span className="sr-only">View admins</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +137,8 @@ function Navbar() {
 
             <span className="text-sm font-medium">View admins</span>
           </Link>
-          <Link href="/admin/notifications" prefetch={false} 
-          className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/notifications' ? 'bg-gray-100 text-gray-700' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
+          <Link href="/admin/notifications" prefetch={false}
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-white ${router.pathname === '/admin/notifications' ? 'bg-gray-100 text-black' : 'hover:bg-gray-100 hover:text-gray-700'}`}>
             <span className="sr-only">Notifications</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -190,14 +190,11 @@ function Navbar() {
             src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
             className="h-10 w-10 rounded-full object-cover"
           />
-
           <div>
             <p className="text-white text-xs">
               <strong className="block font-medium">Eric Frusciante</strong>
-
-              <span> eric@frusciante.com </span>
+              <span>Super Admin</span>
             </p>
-            <p className="text-white text-xs">Super Admin</p>
           </div>
         </Link>
       </div>

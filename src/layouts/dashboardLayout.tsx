@@ -6,9 +6,9 @@ type DashboardLayoutProps = {
 export default function DashboardLayout({ children }:DashboardLayoutProps) : JSX.Element {
   return (
     <>
-      <div className='flex flex-row'>
+      <div className='w-screen flex flex-row'>
       <Navbar />
-      <main className='px-64'>{children}</main>
+      <main className='px-64 '>{children}</main>
       </div>
     </>
   )
