@@ -2,90 +2,79 @@ import React from 'react'
 import Image from 'next/image'
 function login() {
   return (
-    <div>
-      <section className="relative flex flex-wrap lg:h-screen lg:items-center">
+    <div className='overflow-hidden'>
+      <section className="relative flex flex-wrap lg:h-screen lg:items-center bg-black text-cyan-50">
         <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-          <div className="mx-auto max-w-lg text-center">
-            <h1 className="text-2xl font-bold sm:text-3xl">Welcome to TailorLink Admin Portal!</h1>
+
+          <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+            <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
+              <div className='flex items-center justify-center'>
+              <Image
+                src="/logo.png"
+                width={390}
+                height={120}
+                alt="TailorLink Logo"
+                priority
+              />
+              </div>
+              <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-cyan-50">
+                Welcome to TailoLink <br />
+                Sign in to your account
+              </h2>
+            </div>
+
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+              <form className="space-y-6" action="#" method="POST">
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-cyan-50">
+                    Email address
+                  </label>
+                  <div className="mt-2">
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      required
+                      className="px-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label htmlFor="password" className="block text-sm font-medium leading-6 text-cyan-50">
+                      Password
+                    </label>
+                    {/* <div className="text-sm">
+                      <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                        Forgot password?
+                      </a>
+                    </div> */}
+                  </div>
+                  <div className="mt-2">
+                    <input
+                      id="password"
+                      name="password"
+                      type="password"
+                      autoComplete="current-password"
+                      required
+                      className="px-1 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    type="submit"
+                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Sign in
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-
-          <form
-      action=""
-      className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8"
-    >
-      <p className="text-center text-lg font-medium">Sign in to your account</p>
-
-      <div>
-        <label htmlFor="email" className="sr-only">Email</label>
-
-        <div className="relative">
-          <input
-            type="email"
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter email"
-          />
-
-          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="password" className="sr-only">Password</label>
-
-        <div className="relative">
-          <input
-            type="password"
-            className="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"
-            placeholder="Enter password"
-          />
-
-          <span className="absolute inset-y-0 end-0 grid place-content-center px-4">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-gray-400"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-              />
-            </svg>
-          </span>
-        </div>
-      </div>
-
-      <button
-        type="submit"
-        className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-      >
-        Sign in
-      </button>
-    </form>
         </div>
 
         <div className="relative h-64 w-full sm:h-96 lg:h-full lg:w-1/2">
@@ -95,6 +84,7 @@ function login() {
             fill
             alt='admin-dashboard-image'
             className="absolute inset-0 h-full w-full object-cover"
+            priority
           />
         </div>
       </section>

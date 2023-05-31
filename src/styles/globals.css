@@ -15,5 +15,8 @@ body {
   overflow-x: hidden;
 }
 
+.w-calc-100vw-minus-16rem {
+  width: calc(100vw - 16rem);
+}
 
 
