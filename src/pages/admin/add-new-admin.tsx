@@ -14,7 +14,7 @@ const AddNewAdmin: NextPageWithLayout = () => {
                 Add new admin user
               </h6>
               <a
-                className="inline-block rounded border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
+                className="inline-block rounded border bg-indigo-600 hover:bg-indigo-500 px-12 py-3 text-sm font-medium text-white hover:text-white focus:outline-none focus:ring active:bg-indigo-500 focus-visible:outline-indigo-600"
                 href="/download"
               >
                 Add
@@ -70,7 +70,6 @@ const AddNewAdmin: NextPageWithLayout = () => {
             </form>
           </div>
         </div>
-
       </div>
     </div>
 
