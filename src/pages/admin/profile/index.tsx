@@ -7,8 +7,8 @@ const AdminProfile: NextPageWithLayout = () => {
   return (
     <>
       <form>
-        <div className="space-y-12 p-12">
-          <div className="border-b border-gray-900/10 pb-12">
+        <div className="space-y-12 p-12 ">
+          <div className="border-b bg-white border border-gray-200 rounded-lg shadow p-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
               This information will be displayed publicly so be careful what you share.
@@ -48,10 +48,8 @@ const AdminProfile: NextPageWithLayout = () => {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div className="border-b border-gray-900/10 pb-12">
+              <div className=" col-span-full ">
             <h2 className="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
 
@@ -178,21 +176,22 @@ const AdminProfile: NextPageWithLayout = () => {
                   />
                 </div>
               </div>
+              
+              <button
+                type="submit"
+                className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+              >
+                Save
+              </button>
+            </div>
+
+          </div>
             </div>
           </div>
+
+          
         </div>
 
-        <div className="mt-6 flex items-center justify-start gap-x-6 px-12 mb-12">
-          <button type="button" className="text-sm font-semibold leading-6 text-gray-900">
-            Cancel
-          </button>
-          <button
-            type="submit"
-            className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-            Save
-          </button>
-        </div>
       </form>
     </>
   );
