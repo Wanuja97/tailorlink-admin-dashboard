@@ -2,7 +2,8 @@ import type { ReactElement } from 'react';
 import Layout from '../../layouts/dashboardLayout';
 
 import type { NextPageWithLayout } from '../_app';
-import AdminProfile from '@/components/adminProfile';
+// import AdminProfile from '@/components/adminProfile';
+import Link from 'next/link';
 const ViewAdmins: NextPageWithLayout = () => {
   const people = [
     {
@@ -91,13 +92,13 @@ const ViewAdmins: NextPageWithLayout = () => {
               )} */}
             </div>
             <div>
-              <button
+              <Link
                 className="inline-block rounded border border-indigo-600 px-12 py-3 text-sm font-medium text-indigo-600 hover:bg-indigo-600 hover:text-white focus:outline-none focus:ring active:bg-indigo-500"
-                // href="/download"
+                href="/admin/users/wanuja18"
                 // onClick={() => viewUser('23')}
               >
                 View profile
-              </button>
+              </Link>
             </div>
           </li>
         ))}

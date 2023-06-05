@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-function login() {
+function Login() {
   return (
     <div className='overflow-hidden'>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center bg-black text-cyan-50">
@@ -91,4 +91,4 @@ function login() {
   )
 }
 
-export default login
+export default Login
