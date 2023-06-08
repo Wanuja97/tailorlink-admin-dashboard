@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link'
 
 import Image from 'next/image'
+import Logout from './logout';
 // const navigation = [
 //   { name: 'Dashboard', href: 'dashboard', current: true },
 //   { name: 'Users', href: 'users', current: false },
@@ -19,6 +20,12 @@ import Image from 'next/image'
 
 function Navbar() {
   const router = useRouter();
+  
+  const logoutHandler = async (e) => {
+    alert("adads")
+    // <Logout/>
+  };
+
   return (
     <div className="flex fixed top-0 left-0 h-screen w-64 flex-col justify-between border-e bg-cyan-950">
       <div className="px-4 py-6">
@@ -159,8 +166,8 @@ function Navbar() {
             <span className="text-sm font-medium"> Notifications </span>
           </Link>
 
-          <a
-            href="#"
+          <button
+           onClick={(e) => logoutHandler(e)}
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
           >
             <span className="sr-only">Logout</span>
@@ -180,7 +187,7 @@ function Navbar() {
             </svg>
 
             <span className="text-sm font-medium"> Logout </span>
-          </a>
+          </button>
         </nav>
       </div>
 

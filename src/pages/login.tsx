@@ -1,11 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-function login() {
+function Login() {
   return (
     <div className='overflow-hidden'>
       <section className="relative flex flex-wrap lg:h-screen lg:items-center bg-black text-cyan-50">
         <div className="w-full px-4 py-12 sm:px-6 sm:py-16 lg:w-1/2 lg:px-8 lg:py-24">
-
           <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
               <div className='flex items-center justify-center'>
@@ -92,4 +91,4 @@ function login() {
   )
 }
 
-export default login
+export default Login

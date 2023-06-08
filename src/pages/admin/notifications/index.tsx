@@ -4,7 +4,9 @@ import Layout from '../../../layouts/dashboardLayout';
 import type { NextPageWithLayout } from '../../../pages/_app';
 
 const Notifications: NextPageWithLayout = () => {
-  return <p>Notifications</p>
+  return <p>
+    
+  </p>
 }
 
 Notifications.getLayout = function getLayout(page: ReactElement) {
