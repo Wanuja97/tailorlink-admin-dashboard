@@ -21,7 +21,7 @@ import Logout from './logout';
 function Navbar() {
   const router = useRouter();
   
-  const logoutHandler = async (e) => {
+  const logoutHandler = async () => {
     alert("adads")
     // <Logout/>
   };
@@ -167,7 +167,7 @@ function Navbar() {
           </Link>
 
           <button
-           onClick={(e) => logoutHandler(e)}
+           onClick={(e) => logoutHandler()}
             className="flex items-center gap-2 rounded-lg px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-700"
           >
             <span className="sr-only">Logout</span>
